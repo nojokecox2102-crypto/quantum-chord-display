@@ -1,0 +1,14 @@
+[Unit]
+Description=Quantum Chord Display - Guitar Chord Recognition
+After=sound.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/quantum-chord-display
+ExecStart=/home/pi/quantum-chord-display/.venv/bin/python /home/pi/quantum-chord-display/quantum_chord_display.py --allowed C,G,Am,F,Dm,Em --hold 1.6 --calibrate 2.0
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
